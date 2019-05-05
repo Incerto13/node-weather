@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+
+  app:
+    build: ./web
+    restart: unless-stopped
+    env_file: ./web/app.env
+    ports:
+      - "8009:3000" # localhost:container(needs to match port express is listening on in the app and from dockerfile)
+
+
+      

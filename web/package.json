@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "DEBUG=app,app:* nodemon app.js"
+    "start": "./scripts/start.sh",
+    "lint": "eslint app.js",
+    "lint-fix": "eslint app.js --fix"
   },
   "author": "Akin Adekoya",
   "license": "ISC",
@@ -14,9 +16,14 @@
     "debug": "^4.1.1",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "nodemon": "^1.18.11",
     "path": "^0.12.7",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "nodemon": "^1.18.11"
   },
   "nodemonConfig": {
     "restartable": "rs",
@@ -25,7 +32,6 @@
     ]
   },
   "env": {
-    "NODE_ENV": "development",
     "PORT": 3000
   }
 }
